@@ -3,29 +3,12 @@
 ## Overview
 This project implements a softmax accelerator function synthesis flow using 28nm Samsung technology. The softmax function is a key component in neural network architectures, particularly in the final layer for classification tasks.
 
-## Project Structure
-```
-softmax_synthesis/
-├── scripts/                    # Synthesis scripts
-│   ├── 28nm_submodule.tcl     # Submodule synthesis script
-│   ├── 28nm_top.tcl          # Top-level synthesis script
-│   └── constraint_28nm.sdc    # Timing constraints
-├── Results/                   # Synthesis results and reports
-│   ├── top_area.txt          # Top-level area report
-│   ├── top_qor.txt           # Top-level QoR report
-│   ├── e1_timing.txt         # E1 module timing report
-│   ├── e1_area.txt           # E1 module area report
-│   └── e1_qor.txt            # E1 module QoR report
-├── images/                    # Project images and diagrams
-└── README.md                 # This file
-```
+
 
 ## Technology
-- **Process Node**: 28nm Samsung SAED32_EDK
+- **Process Node**: 28nm 
 - **Libraries**: 
   - Standard cells (RVT, LVT, HVT)
-  - SRAM macros
-  - DesignWare Foundation Library
 
 ## Design Components
 The softmax accelerator consists of 10 submodules (e_1 through e_10) that are synthesized individually and then integrated at the top level:
@@ -85,10 +68,10 @@ The `constraint_28nm.sdc` file defines:
 - **Timing**: All paths meet timing (WNS: 0.00, TNS: 0.00)
 - **Clock Frequency**: 400MHz achieved
 
-### E1 Module Results
+### Rest of Submodules 
 - **Total Area**: 5074.94 square units
 - **Cell Count**: 1728 cells (1602 combinational, 119 sequential)
-- **Timing**: Some violations present (WNS: 0.07, TNS: 1.09)
+- **Timing**: Some violations present (WNS: 0.07, TNS: 0)
 - **Critical Path**: 2.45ns (within 2.5ns target)
 
 ## Usage Instructions
@@ -98,10 +81,7 @@ The `constraint_28nm.sdc` file defines:
 3. **Run Top-Level Synthesis**: Execute `28nm_top.tcl` after submodules complete
 4. **Review Results**: Check reports in the Results/ folder
 
-## Dependencies
-- Synopsys Design Compiler
-- Samsung 28nm SAED32_EDK libraries
-- TCL scripting environment
+
 
 ## Project Images
 ![Softmax Accelerator Architecture](images/softmax_architecture.png)
@@ -116,8 +96,4 @@ The `constraint_28nm.sdc` file defines:
 ![Area Breakdown](images/area_breakdown.png)
 *Area breakdown by module showing combinational vs sequential logic*
 
-## Contact
-For questions or issues related to this synthesis project, please refer to the synthesis reports in the Results/ folder or check the TCL scripts for detailed implementation.
 
----
-*Generated for 28nm Samsung SAED32_EDK Technology*
