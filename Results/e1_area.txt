@@ -1,0 +1,30 @@
+****************************************
+Report : area
+Design : e_1
+Version: W-2024.09-SP2
+Date   : Sat Sep  6 18:27:03 2025
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c 
+    saed32hvt_ss0p75v125c 
+
+Number of ports:                           68
+Number of nets:                          1812
+Number of cells:                         1728
+Number of combinational cells:           1602
+Number of sequential cells:               119
+Number of macros/black boxes:               0
+Number of buf/inv:                        381
+Number of references:                      64
+
+Combinational area:               3500.325339
+Buf/Inv area:                      540.310148
+Noncombinational area:             787.846425
+Macro/Black Box area:                0.000000
+Net Interconnect area:             786.767098
+
+Total cell area:                  4288.171764
+Total area:                       5074.938863
+1
